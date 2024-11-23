@@ -8,8 +8,9 @@
     <link rel="icon" href="images/favicon.ico">
     <link href="css/style.css" rel="stylesheet">
   </head>
+  <!-- page: current-name-of-page -->
   <body
-    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-data="{ page: '<?php echo basename($_SERVER['PHP_SELF'], '.php') ?>', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
